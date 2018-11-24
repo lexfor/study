@@ -1,0 +1,35 @@
+\documentclass[a4paper,fleqn]{article}% формула спрва и формат а4 
+\usepackage[utf8]{}% кодировка собсна
+\usepackage{graphicx}% картинки
+\setlength{\textwidth}{145mm}% задаю ширину текста  
+\usepackage{fancyhdr}% для работы с колонтикулами
+\usepackage{times}% щрифт 
+\pagestyle{fancy}% стиль стрницы для линий в колонтикуле
+\renewcommand{\headrulewidth}{0pt} % убрали полоску сверху
+\usepackage{color}% подключение цвета
+\usepackage[left=32mm, top=30mm, right=33mm, bottom=40mm]{geometry}% работа  с полями
+\fancyfoot[C]{}% убираем номер страницы 
+\renewcommand{\footrulewidth}{0.2 pt}% создали линию снизу
+\renewcommand{\footrule}{\hbox to \textwidth{\color{red}\leaders\hrule height \footrulewidth\hfill}}% считает размер и его закрашивает 
+\fancyfoot [R]{\large\textbf {Sigmoid,  Tanh,  and  ReLU  Neurons $ \vert  $  13}} % работа с нижней колонтикулой 
+\begin{document}
+ \noindent%-красная строка  
+ \large neurons  can  be  expressed  as  a  network  with  no  hidden  layers.  This   is   problematic because,  as  we  discussed  before,  hidden  layers  are  what  enable  us  to  learn  important features  from  the  input  data.  In  other  words,  in  order  to  learn  complex  relationships, we  need  to  use  neurons  that  employ  some  sort  of  nonlinearity .
+ 
+{\flushleft\huge\textbf{Sigmoid,  Tanh,  and  ReLU  Neurons}}% жирнич слева шрифт и отступ
+
+\vspace{\baselineskip} % пропуск строки
+\noindent\large There  are  three  major  types  of  neurons  that  are  used  in  practice  that  introduce  nonli‐nearities  in  their  computations.  The  first  of  these  is  the \emph{ sigmoid  neuron}% курсив
+,  which  uses the  function:
+\large\begin{displaymath}
+      f(z)=\frac{1}{1+e^{-z}} % дробь
+\end{displaymath}
+Intuitively,  this  means  that  when  the  logit  is  very  small,  the  output  of  a  logistic  neuron  is  very  close  to  0.  When  the  logit  is  very  large,  the  output  of  the  logistic  neuron  is close  to  1.  In-between  these  two  extremes,  the  neuron  assumes  an  S-shape,  as  shown in \textcolor{red}{ Figure  1-11}.
+\vspace{\baselineskip} 
+\flushleft\includegraphics[width= \textwidth] {graf.jpg} % закидываем файл с картинкой ширина картинки такая же как и текста 
+\flushleft\large\emph{ Figure  1-11.  The  output  of  a  sigmoid  neuron  as  z  varies}
+
+\vspace{\baselineskip} 
+ \noindent\emph {Tanh  neuronsuse}  a  similar  kind  of  S-shaped  nonlinearity,  but  instead  of  ranging  from 0  to  1,  the  output  of  tanh  neurons  range  from  -1    to  1.  As  one  would  expect,  they use $ f(z) =  tanh (z). $ The  resulting  relationship  between  the  output  $y$  and  the  logit  $z$  is described  by \textcolor{red}{ Figure  1-12}. When  S-shaped  nonlinearities  are  used,  the  tanh  neuron  is often  preferred  over  the  sigmoid  neuron  because  it  is  zero-centered.
+ \end{document}
+\end{article}
